@@ -20,6 +20,15 @@
     "experience",
     "language"
   ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "../",
+    "test",
+    "tests",
+    ".mversionrc"
+  ],
   "author": "Shaun Bent <shaun.bent@bbc.co.uk>",
   "license": "MIT",
   "bugs": {
