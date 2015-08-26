@@ -5,7 +5,7 @@
   "authors": [
     "Shaun Bent <shaun.bent@bbc.co.uk>"
   ],
-  "description": "A collection of Sass Settings & Tools used by GEL components",
+  "description": "A collection of Sass Settings & Tools which align to key GEL values",
   "main": "_gel-sass-tools.scss",
   "keywords": [
     "settings",
