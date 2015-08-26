@@ -1,0 +1,28 @@
+{
+  "name": "gel-sass-tools",
+  "version": "0.0.1",
+  "homepage": "https://github.com/bbc/gel-sass-tools",
+  "authors": [
+    "Shaun Bent <shaun.bent@bbc.co.uk>"
+  ],
+  "description": "A collection of Sass Settings & Tools used by GEL components",
+  "main": "_gel-sass-tools.scss",
+  "keywords": [
+    "Sass",
+    "Tools",
+    "Settings",
+    "GEL"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "../",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sass-mq": "^3.2.0"
+  }
+}
