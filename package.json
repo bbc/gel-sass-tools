@@ -1,12 +1,15 @@
 {
   "name": "gel-sass-tools",
   "version": "0.0.1",
-  "homepage": "https://github.com/bbc/gel-sass-tools",
-  "authors": [
-    "Shaun Bent <shaun.bent@bbc.co.uk>"
-  ],
   "description": "A collection of Sass Settings & Tools used by GEL components",
   "main": "_gel-sass-tools.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bbc/gel-sass-tools.git"
+  },
   "keywords": [
     "settings",
     "sass",
@@ -17,15 +20,12 @@
     "experience",
     "language"
   ],
+  "author": "Shaun Bent <shaun.bent@bbc.co.uk>",
   "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "../",
-    "test",
-    "tests"
-  ],
+  "bugs": {
+    "url": "https://github.com/bbc/gel-sass-tools/issues"
+  },
+  "homepage": "https://github.com/bbc/gel-sass-tools",
   "dependencies": {
     "sass-mq": "^3.2.3"
   }
