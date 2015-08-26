@@ -124,7 +124,7 @@ The following `math` functions are included:
 These functions can be used inline with any numerical CSS rule. E.g:
 
 ```sass
-.some-class {
+.my-component {
     margin-bottom: havle($gel-spacing-unit);
     padding-left: double($gel-spacing-unit);
     padding-right: double($gel-spacing-unit);
@@ -134,7 +134,7 @@ These functions can be used inline with any numerical CSS rule. E.g:
 or functions can be nested within other Sass features such as mixins:
 
 ```sass
-.some-class {
+.my-component {
     @include rem('margin-bottom', havle($gel-spacing-unit));
     @include rem('padding-left', double($gel-spacing-unit));
     @include rem('padding-right', double($gel-spacing-unit))s;
@@ -146,7 +146,7 @@ or functions can be nested within other Sass features such as mixins:
 The `rem` tool can be used in two ways. Either by directly calling the `rem($value)` function, which will convert the supplied value and return a `rem` unit. E.g:
 
 ```sass
-.some-class {
+.my-component {
     margin-bottom: rem($gel-spacing-unit);
 }
 ```
@@ -157,14 +157,14 @@ You can also use the `@include rem($value);` mixin, which by default returns a `
 
 **Sass**
 ```sass
-.some-class {
+.my-component {
     @include rem('margin-bottom', 16px);
 }
 ```
 
 **CSS**
 ```css
-.some-class {
+.my-component {
     margin-bottom: 16px;
     margin-bottom: 1rem;
 }
