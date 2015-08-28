@@ -44,7 +44,7 @@ $ bower install --save git+ssh://git@github.com/bbc/gel-sass-tools.git
 
 ```sass
 // your-app/main.scss
-@import 'bower_components/gel-sass-tools/gel-sass-tools';
+@import 'bower_components/gel-sass-tools/sass-tools';
 @import 'bower_components/sass-mq/mq'
 ```
 
@@ -56,7 +56,7 @@ $ npm install --save git+ssh://git@github.com/bbc/gel-sass-tools.git
 
 ```sass
 // your-app/main.scss
-@import 'node_modules/gel-sass-tools/gel-sass-tools';
+@import 'node_modules/gel-sass-tools/sass-tools';
 @import 'node_modules/sass-mq/mq'
 ```
 
