@@ -91,6 +91,8 @@ The following breakpoints are defined and added to the [Sass MQ](https://github.
 - `gel-bp-s` - 400px
 - `gel-bp-m` - 600px
 - `gel-bp-l` - 900px
+- `gel-bp-xl` - 1008px
+- `gel-bp-xxl` - 1280px
 
 These can be called when using the `mq` mixin:
 
