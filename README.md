@@ -1,8 +1,8 @@
-# GEL Sass Tools
-
-A collection of Sass Settings & Tools which align to key GEL values
-
-**This repository forms part of the the [GEL Foundations](https://github.com/bbc/gel-foundations).**
+<h1 align="center">GEL Sass Tools</h1>
+<p align="center">
+    A collection of Sass Settings & Tools which align to key GEL values.<br />
+    Forms part of the <a href="https://github.com/bbc/gel-foundations" target="_blank"><b>GEL Foundations</b></a>
+</p>
 
 ## What is this?
 
@@ -39,7 +39,7 @@ This would compile to:
 ### Install using Bower
 
 ```bash
-$ bower install --save git+ssh://git@github.com/bbc/gel-sass-tools.git
+$ bower install --save gel-sass-tools
 ```
 
 ```sass
@@ -51,7 +51,7 @@ $ bower install --save git+ssh://git@github.com/bbc/gel-sass-tools.git
 ### Install using NPM
 
 ```bash
-$ npm install --save git+ssh://git@github.com/bbc/gel-sass-tools.git
+$ npm install --save gel-sass-tools
 ```
 
 ```sass
@@ -179,6 +179,11 @@ The following options can be defined before the tools partial is included to cus
 - `$gel-tools-rem-enable--function` - enable/disable the rem conversion, if this option is disabled only `px` values will be returned
 - `$gel-tools-rem-enable--mixin` - disable the mixin if you only want to output the `px`, this can be useful for IE8 stylesheets who don't need `rem` values
 - `$tel-tools-rem-enable--fallback` - disable the automatic generation of a `px` fallback when the mixin in called, use this open if you want to remove all `px` values from your stylesheets
+
+## Credits
+
+- [Shaun Bent](https://twitter.com/shaunbent)
+- [Al Jones](https://twitter.com/Itsaljones)
 
 ## License
 
