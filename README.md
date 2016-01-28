@@ -119,7 +119,7 @@ These can be called when using the `mq` mixin:
 The following `math` functions are included:
 
 - `quarter($value)`
-- `havle($value)`
+- `halve($value)`
 - `double($value)`
 - `quadruple($value)`
 
@@ -127,7 +127,7 @@ These functions can be used inline with any numerical CSS rule. E.g:
 
 ```sass
 .my-component {
-    margin-bottom: havle($gel-spacing-unit);
+    margin-bottom: halve($gel-spacing-unit);
     padding-left: double($gel-spacing-unit);
     padding-right: double($gel-spacing-unit);
 }
@@ -137,7 +137,7 @@ or functions can be nested within other Sass features such as mixins:
 
 ```sass
 .my-component {
-    @include rem('margin-bottom', havle($gel-spacing-unit));
+    @include rem('margin-bottom', halve($gel-spacing-unit));
     @include rem('padding-left', double($gel-spacing-unit));
     @include rem('padding-right', double($gel-spacing-unit))s;
 }
