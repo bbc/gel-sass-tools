@@ -144,7 +144,7 @@ or functions can be nested within other Sass features such as mixins:
 .my-component {
     @include rem('margin-bottom', halve($gel-spacing-unit));
     @include rem('padding-left', double($gel-spacing-unit));
-    @include rem('padding-right', double($gel-spacing-unit))s;
+    @include rem('padding-right', double($gel-spacing-unit));
 }
 ```
 
