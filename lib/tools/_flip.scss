@@ -12,8 +12,8 @@
 //     text-align: flip(left, right);
 // }
 //
-// @param {String}     $ltr-value - The value used when in LTR
-// @param {String}     $rtl-value - The value used when in RTL
+// @param {String}     $ltr-value - The value used when in LTR mode
+// @param {String}     $rtl-value - The value used when in RTL mode
 //
 // @return {String}    The correct value based on the value of $rtl
 //
