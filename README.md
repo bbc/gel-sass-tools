@@ -1,5 +1,8 @@
 <h1 align="center">GEL Sass Tools</h1>
 <p align="center">
+  <a href="https://travis-ci.org/bbc/gel-sass-tools" target="_blank"><img src="https://travis-ci.org/bbc/gel-ass-tools.svg?branch=master"></a>
+</p>
+<p align="center">
     A collection of Sass Settings & Tools which align to key GEL values.<br />
     Forms part of the <a href="https://github.com/bbc/gel-foundations" target="_blank"><b>GEL Foundations</b></a>
 </p>
