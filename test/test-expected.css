@@ -29,13 +29,16 @@
 }
 
 .ltr {
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: 10px;
   margin-right: 10px;
+  margin-left: 10px;
   border-right: 10px;
-  left: 10px;
+  border-left: 10px;
+  border-left-width: 10px;
+  border-right-width: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
   right: 10px;
+  left: 10px;
   text-align: left;
   float: left;
   direction: ltr;
@@ -43,13 +46,16 @@
 }
 
 .rtl {
-  padding-right: 10px;
-  padding-left: 10px;
-  margin-right: 10px;
   margin-left: 10px;
+  margin-right: 10px;
   border-left: 10px;
-  right: 10px;
+  border-right: 10px;
+  border-left-width: 10px;
+  border-right-width: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   left: 10px;
+  right: 10px;
   text-align: right;
   float: right;
   direction: rtl;
