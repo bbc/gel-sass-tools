@@ -215,7 +215,7 @@ Taking the following CSS as an example:
 }
 ```
 
-For a RTL layout, `float: left;`` should be flipped to `float: right;`. We can use the `flip()`` function to accomplish this.
+For a RTL layout, `float: left;` should be flipped to `float: right;`. We can use the `flip()` function to accomplish this.
 
 ```sass
 // Flipped Sass
@@ -253,7 +253,7 @@ Taking the following CSS as an example:
 }
 ```
 
-For a RTL layout, `padding-left: 8px;`` should be flipped to `padding-right: 8px;`.
+For a RTL layout, `padding-left: 8px;` should be flipped to `padding-right: 8px;`.
 
 In order to flip this, we have to interpolate the style property:
 
