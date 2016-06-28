@@ -35,23 +35,29 @@ $rtl: false !default;
 //
 // @type String
 //
-$padding-left:    'padding-left';
-$padding-right:   'padding-right';
-$margin-left:     'margin-left';
-$margin-right:    'margin-right';
-$border-right:    'border-right';
-$left:            'left';
-$right:           'right';
+$margin-right:       'margin-right';
+$margin-left:        'margin-left';
+$border-right:       'border-right';
+$border-left:        'border-left';
+$border-left-width:  'border-right-width';
+$border-right-width: 'border-left-width';
+$padding-right:      'padding-right';
+$padding-left:       'padding-left';
+$right:              'right';
+$left:               'left';
 
 
 // If the `$rtl` variable is `true` flip the direction of the interpolated properties
 //
 @if $rtl {
-    $padding-left:  'padding-right';
-    $padding-right: 'padding-left';
-    $margin-left:   'margin-right';
-    $margin-right:  'margin-left';
-    $border-right:  'border-left';
-    $left:          'right';
-    $right:         'left';
+    $margin-right:       'margin-left';
+    $margin-left:        'margin-right';
+    $border-right:       'border-left';
+    $border-left:        'border-right';
+    $border-left-width:  'border-right-width';
+    $border-right-width: 'border-left-width';
+    $padding-right:      'padding-left';
+    $padding-left:       'padding-right';
+    $right:              'left';
+    $left:               'right';
 }
