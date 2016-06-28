@@ -224,7 +224,7 @@ For a RTL layout, `float: left;` should be flipped to `float: right;`. We can us
 }
 ```
 
-When Sass comes across the `flip()` function when compiling the code, it will check the value of the `$rtl` variable. If `$rtl` is `false`, the `flip()` function will take the first parameter. If `$rtl` is `true`, the `flip()` function will take the second parameter.
+When Sass comes across the `flip()` function, it will check the value of the `$rtl` variable. If `$rtl` is `false`, the `flip()` function will take the first parameter. If `$rtl` is `true`, the `flip()` function will take the second parameter.
 
 The Sass will compile out as follows:
 
@@ -266,7 +266,7 @@ In order to flip this, we have to interpolate the style property:
 
 This will compile out to:
 
-```css
+```sass
 // Compiled LTR style
 .my-component {
     padding-left: 8px;
