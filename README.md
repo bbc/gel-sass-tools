@@ -293,7 +293,7 @@ This will compile out to:
 
 > The MIT License (MIT)
 >
-> Copyright 2015 British Broadcasting Corporation
+> Copyright 2016 British Broadcasting Corporation
 >
 > Permission is hereby granted, free of charge, to any person obtaining a copy of
 > this software and associated documentation files (the "Software"), to deal in
