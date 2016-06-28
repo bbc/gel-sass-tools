@@ -1,0 +1,70 @@
+///*------------------------------------*\
+//    # GEL SASS TOOLS - TEST
+//\*------------------------------------*/
+
+@import '../sass-tools';
+@import '../node_modules/sass-mq/mq';
+
+// Lets test our math functions
+.math-functions {
+    padding: quarter(10px);     // Expected: 3px
+    padding: third(10px);       // Expected: 3px
+    padding: halve(10px);       // Expected: 5px
+    padding: double(10px);      // Expected: 20px
+    padding: triple(10px);      // Expected: 30px
+    padding: quadruple(10px);   // Expected: 40px
+
+    margin: quarter(-10px);     // Expected: -3px
+    margin: third(-10px);       // Expected: -3px
+    margin: halve(-10px);       // Expected: -5px
+    margin: double(-10px);      // Expected: -20px
+    margin: triple(-10px);      // Expected: -30px
+    margin: quadruple(-10px);   // Expected: -40px
+}
+
+// Lets test our rem functions
+.rem-function {
+    font-size: rem(16px);   // Expected: 1rem
+    font-size: rem(24px);   // Expected: 1.5rem
+    font-size: rem(32px);   // Expected: 2rem
+}
+
+.rem-mixin {
+    @include rem('font-size', 16px);    // Expected: 1rem
+    @include rem('font-size', 24px);    // Expected: 1.5rem
+    @include rem('font-size', 32px);    // Expected: 2rem
+}
+
+// Lets test RTL support
+.ltr {
+    #{$padding-left}: 10px;
+    #{$padding-right}: 10px;
+    #{$margin-left}: 10px;
+    #{$margin-right}: 10px;
+    #{$border-right}: 10px;
+    #{$left}: 10px;
+    #{$right}: 10px;
+
+    text-align: flip(left, right);
+    float: flip(left, right);
+    direction: flip(ltr, rtl);
+    flex-direction: flip(row-reverse, row);
+}
+
+$rtl: true;
+@import '../sass-tools';
+
+.rtl {
+    #{$padding-left}: 10px;
+    #{$padding-right}: 10px;
+    #{$margin-left}: 10px;
+    #{$margin-right}: 10px;
+    #{$border-right}: 10px;
+    #{$left}: 10px;
+    #{$right}: 10px;
+
+    text-align: flip(left, right);
+    float: flip(left, right);
+    direction: flip(ltr, rtl);
+    flex-direction: flip(row-reverse, row);
+}
