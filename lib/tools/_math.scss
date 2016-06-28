@@ -19,12 +19,20 @@
     @return round($gel-number / 4);
 }
 
+@function third($gel-number) {
+    @return round($gel-number / 3);
+}
+
 @function halve($gel-number) {
     @return round($gel-number / 2);
 }
 
 @function double($gel-number) {
     @return round($gel-number * 2);
+}
+
+@function triple($gel-number) {
+    @return round($gel-number * 3);
 }
 
 @function quadruple($gel-number) {

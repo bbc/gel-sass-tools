@@ -1,0 +1,26 @@
+///*------------------------------------*\
+//    # FLIP
+//\*------------------------------------*/
+
+// The flip function switches between the two provided arguements
+// based on the value of the globally defined $rtl value.
+//
+// This can be used to toggle between values which need to change
+// when we want right-to-left support.
+//
+// .foo {
+//     text-align: flip(left, right);
+// }
+//
+// @param {String}     $ltr-value - The value used when in LTR mode
+// @param {String}     $rtl-value - The value used when in RTL mode
+//
+// @return {String}    The correct value based on the value of $rtl
+//
+@function flip($ltr-value, $rtl-value) {
+    @if $rtl {
+        @return $rtl-value;
+    }
+
+    @return $ltr-value;
+}

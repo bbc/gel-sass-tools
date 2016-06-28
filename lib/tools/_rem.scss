@@ -43,10 +43,9 @@ $gel-tools-rem-enable--fallback: true !default;
         }
 
         @return $result;
-    } @else {
-        @return if(type-of($value) == number and unit($value) == px, $value / $baseline * 1rem, $value);
     }
 
+    @return if(type-of($value) == number and unit($value) == px, $value / $baseline * 1rem, $value);
 }
 
 

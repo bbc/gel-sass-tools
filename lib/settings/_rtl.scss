@@ -1,0 +1,63 @@
+///*------------------------------------*\
+//    # RIGHT TO LEFT (RTL)
+//\*------------------------------------*/
+
+// The following variables are used to provide support for Right to Left
+// langauges. These variables are used in conjunction with the `flip` function.
+//
+// To provide RTL support we need to adjust a combination of properties and values.
+// Values can be adjusted using the `flip` function and properties adjusted using the
+// interpolation variables.
+
+
+/// RTL
+//
+// By default RTL support is disabled. This can be enabled by defining an `$rtl` variable
+// before importing the `gel-sass-tools`. When set to true the `$rtl` variable will change
+// the output of the `flip` function and the value of the interpolated property variables below.
+//
+// @type Bool
+//
+$rtl: false !default;
+
+
+
+/// Interpolated Properties
+//
+// Interpolation is used for any property which has a direction (e.g. padding-left, margin-right,
+// border-right, left, etc.). When using any of these properties interpolate the following variables
+// so that there value can be controlled based on the value of the `$rtl` variable.
+//
+// .foo {
+//     #{$padding-left}: $gel-spacing-unit;
+//     #{$margin-left}: $gel-spacing-unit;
+// }
+//
+// @type String
+//
+$margin-right:       'margin-right';
+$margin-left:        'margin-left';
+$border-right:       'border-right';
+$border-left:        'border-left';
+$border-left-width:  'border-right-width';
+$border-right-width: 'border-left-width';
+$padding-right:      'padding-right';
+$padding-left:       'padding-left';
+$right:              'right';
+$left:               'left';
+
+
+// If the `$rtl` variable is `true` flip the direction of the interpolated properties
+//
+@if $rtl {
+    $margin-right:       'margin-left';
+    $margin-left:        'margin-right';
+    $border-right:       'border-left';
+    $border-left:        'border-right';
+    $border-left-width:  'border-right-width';
+    $border-right-width: 'border-left-width';
+    $padding-right:      'padding-left';
+    $padding-left:       'padding-right';
+    $right:              'left';
+    $left:               'right';
+}

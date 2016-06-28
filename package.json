@@ -1,10 +1,10 @@
 {
   "name": "gel-sass-tools",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "A collection of Sass Settings & Tools which align to key GEL values",
   "main": "_sass-tools.scss",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node-sass test/test.scss test/test.css --output-style=expanded --sourcemap=none && diff -u test/test-expected.css test/test.css"
   },
   "repository": {
     "type": "git",
@@ -37,5 +37,9 @@
   "homepage": "https://github.com/bbc/gel-sass-tools",
   "dependencies": {
     "sass-mq": "^3.2.3"
+  },
+  "devDependencies": {
+    "node-sass": "^3.8.0",
+    "sass-mq": "^3.2.9"
   }
 }
