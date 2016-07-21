@@ -5,7 +5,7 @@
 // The following variables provide a common configuration to use across
 // various GEL components. These variables should not be modified or
 // adjusted directly; you should predefine the variables in your own project,
-// to overide these default settings.
+// to override these default settings.
 
 
 /// Namespace
@@ -24,7 +24,7 @@ $gel-namespace: 'gel-' !default;
 //
 // GEL spacing is based on an 8px baseline and multiples of this number, where possible
 // this baseline and multiples of should act as your default spacing unit. This helps to
-// ensure we have consistant spacing across products.
+// ensure we have consistent spacing across products.
 //
 // @type Number (with units)
 //
