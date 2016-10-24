@@ -35,6 +35,8 @@
   border-left: 10px;
   border-left-width: 10px;
   border-right-width: 10px;
+  border-left-color: red;
+  border-right-color: blue;
   padding-right: 10px;
   padding-left: 10px;
   right: 10px;
@@ -52,6 +54,8 @@
   border-right: 10px;
   border-left-width: 10px;
   border-right-width: 10px;
+  border-right-color: red;
+  border-left-color: blue;
   padding-left: 10px;
   padding-right: 10px;
   left: 10px;
