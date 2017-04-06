@@ -28,6 +28,6 @@
     ".mversionrc"
   ],
   "dependencies": {
-    "sass-mq": "^3.2.3"
+    "sass-mq": "^3.2.6"
   }
 }
