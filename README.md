@@ -39,18 +39,6 @@ This would compile to:
 
 ## Installation
 
-### Install using Bower
-
-```bash
-$ bower install --save gel-sass-tools
-```
-
-```sass
-// your-app/main.scss
-@import 'bower_components/gel-sass-tools/sass-tools';
-@import 'bower_components/sass-mq/mq'
-```
-
 ### Install using NPM
 
 ```bash

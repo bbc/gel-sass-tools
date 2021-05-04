@@ -23,13 +23,11 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
     "../",
     "test",
-    "tests",
-    ".mversionrc"
+    "tests"
   ],
-  "author": "Shaun Bent <shaun.bent@bbc.co.uk>",
+  "author": "BBC",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bbc/gel-sass-tools/issues"
