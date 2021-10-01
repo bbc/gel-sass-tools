@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 ///*------------------------------------*\
 //    # MATH
 //\*------------------------------------*/
@@ -16,15 +18,15 @@
 // @author          Harry Roberts - http://bit.ly/1NTThPq
 //
 @function quarter($gel-number) {
-    @return round($gel-number / 4);
+    @return round(math.div($gel-number, 4));
 }
 
 @function third($gel-number) {
-    @return round($gel-number / 3);
+    @return round(math.div($gel-number, 3));
 }
 
 @function halve($gel-number) {
-    @return round($gel-number / 2);
+    @return round(math.div($gel-number, 2));
 }
 
 @function double($gel-number) {
