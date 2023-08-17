@@ -130,30 +130,30 @@ or functions can be nested within other Sass features such as mixins:
 
 ```sass
 .my-component {
-    @include rem('margin-bottom', halve($gel-spacing-unit));
-    @include rem('padding-left', double($gel-spacing-unit));
-    @include rem('padding-right', double($gel-spacing-unit));
+    @include toRem('margin-bottom', halve($gel-spacing-unit));
+    @include toRem('padding-left', double($gel-spacing-unit));
+    @include toRem('padding-right', double($gel-spacing-unit));
 }
 ```
 
 ### REM mixin
 
-The `rem` tool can be used in two ways. Either by directly calling the `rem($value)` function, which will convert the supplied value and return a `rem` unit. E.g:
+The `rem` tool can be used in two ways. Either by directly calling the `toRem($value)` function, which will convert the supplied value and return a `rem` unit. E.g:
 
 ```sass
 .my-component {
-    margin-bottom: rem($gel-spacing-unit);
+    margin-bottom: toRem($gel-spacing-unit);
 }
 ```
 
 > Beware that [rem](http://caniuse.com/#feat=rem) units are not universal supported. IE8 and below do not support `rem` so require a `px` fallback.
 
-You can also use the `@include rem($value);` mixin, which by default returns a `px` fallback to allow support for older browsers which don't support `rem` units. E.g:
+You can also use the `@include toRem($value);` mixin, which by default returns a `px` fallback to allow support for older browsers which don't support `rem` units. E.g:
 
 **Sass**
 ```sass
 .my-component {
-    @include rem('margin-bottom', 16px);
+    @include toRem('margin-bottom', 16px);
 }
 ```
 
