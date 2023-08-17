@@ -26,7 +26,7 @@ $gel-tools-rem-enable--fallback: true !default;
 //
 // @author          Kaelig - https://github.com/guardian/guss-rem
 //
-@function rem($value, $baseline: $gel-base-font-size) {
+@function toRem($value, $baseline: $gel-base-font-size) {
 
     // if function is disabled then return the value
     @if ($gel-tools-rem-enable--function == false) {
@@ -61,7 +61,7 @@ $gel-tools-rem-enable--fallback: true !default;
 //
 // @author          Shaun Bent
 //
-@mixin rem($property, $value) {
+@mixin toRem($property, $value) {
 
     // Return the pixel value first
     @if ($gel-tools-rem-enable--mixin == false or $gel-tools-rem-enable--fallback == true) {
@@ -70,7 +70,7 @@ $gel-tools-rem-enable--fallback: true !default;
 
     // Pass the px value into the rem function
     @if ($gel-tools-rem-enable--function == true and $gel-tools-rem-enable--mixin == true) {
-        #{$property}: rem($value);
+        #{$property}: toRem($value);
     }
 
 }
