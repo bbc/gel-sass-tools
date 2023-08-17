@@ -24,15 +24,15 @@
 
 // Lets test our rem functions
 .rem-function {
-    font-size: rem(16px);   // Expected: 1rem
-    font-size: rem(24px);   // Expected: 1.5rem
-    font-size: rem(32px);   // Expected: 2rem
+    font-size: toRem(16px);   // Expected: 1rem
+    font-size: toRem(24px);   // Expected: 1.5rem
+    font-size: toRem(32px);   // Expected: 2rem
 }
 
 .rem-mixin {
-    @include rem('font-size', 16px);    // Expected: 1rem
-    @include rem('font-size', 24px);    // Expected: 1.5rem
-    @include rem('font-size', 32px);    // Expected: 2rem
+    @include toRem('font-size', 16px);    // Expected: 1rem
+    @include toRem('font-size', 24px);    // Expected: 1.5rem
+    @include toRem('font-size', 32px);    // Expected: 2rem
 }
 
 // Lets test RTL support

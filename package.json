@@ -1,6 +1,6 @@
 {
   "name": "gel-sass-tools",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "A collection of Sass Settings & Tools which align to key GEL values",
   "main": "_sass-tools.scss",
   "scripts": {
@@ -34,10 +34,10 @@
   },
   "homepage": "https://github.com/bbc/gel-sass-tools",
   "dependencies": {
-    "sass-mq": "5.0.1"
+    "sass-mq": "6.0.0"
   },
   "devDependencies": {
-    "sass": "1.42.1",
-    "sass-mq": "5.0.1"
+    "sass": "1.65.1",
+    "sass-mq": "6.0.0"
   }
 }
