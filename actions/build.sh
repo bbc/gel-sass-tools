@@ -7,4 +7,4 @@ set -e +x
 npm i
 
 # Create assets
-npm run build
+npm test
