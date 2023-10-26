@@ -37,7 +37,7 @@
     "sass-mq": "6.0.0"
   },
   "devDependencies": {
-    "sass": "1.65.1",
+    "sass": "1.69.5",
     "sass-mq": "6.0.0"
   }
 }
