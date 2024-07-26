@@ -1,6 +1,6 @@
 {
   "name": "gel-sass-tools",
-  "version": "3.1.2",
+  "version": "3.2.0",
   "description": "A collection of Sass Settings & Tools which align to key GEL values",
   "main": "_sass-tools.scss",
   "scripts": {
