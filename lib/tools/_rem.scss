@@ -6,8 +6,7 @@
 //\*------------------------------------*/
 
 // We need to check that the GEL settings are available globally
-$gel-settings-available: false !default;
-@if ($gel-settings-available == false) {
+@if (meta.global-variable-exists('gel-settings-available')) {
     @warn "Missing Dependency: Have you included the GEL settings?";
 }
 
