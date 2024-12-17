@@ -3,10 +3,10 @@
 //\*------------------------------------*/
 
 // Settings
-@import 'lib/settings/globals';
-@import 'lib/settings/rtl';
+@forward 'lib/settings/globals';
+@forward 'lib/settings/rtl';
 
 // Tools
-@import 'lib/tools/rem';
-@import 'lib/tools/math';
-@import 'lib/tools/flip';
+@forward 'lib/tools/rem';
+@forward 'lib/tools/math';
+@forward 'lib/tools/flip';

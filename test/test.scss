@@ -2,8 +2,8 @@
 //    # GEL SASS TOOLS - TEST
 //\*------------------------------------*/
 
-@import '../sass-tools';
-@import '../node_modules/sass-mq/mq';
+@use '../sass-tools' as *;
+@use '../node_modules/sass-mq/mq' as *;
 
 // Lets test our math functions
 .math-functions {
@@ -57,7 +57,6 @@
 }
 
 $rtl: true;
-@import '../sass-tools';
 
 .rtl {
     #{$margin-right}: 10px;
