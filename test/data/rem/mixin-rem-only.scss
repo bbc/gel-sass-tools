@@ -1,16 +1,15 @@
 $gel-tools-rem-enable--fallback: false;
 
-@import '../../../node_modules/sass-mq/mq';
-@import '../../../sass-tools';
+@use '../../../sass-tools';
 
 .demo-1 {
-  font-size: toRem(16px);
+  font-size: sass-tools.toRem(16px);
 }
 
 .demo-2 {
-  font-size: toRem(24px);
+  font-size: sass-tools.toRem(24px);
 }
 
 .demo-3 {
-  font-size: toRem(32px);
+  font-size: sass-tools.toRem(32px);
 }

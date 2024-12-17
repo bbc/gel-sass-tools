@@ -1,14 +1,13 @@
-@import '../../../node_modules/sass-mq/mq';
-@import '../../../sass-tools';
+@use '../../../sass-tools';
 
 .demo-1 {
-  @include toRem('font-size', 16px);
+  @include sass-tools.toRem('font-size', 16px);
 }
 
 .demo-2 {
-  @include toRem('font-size', 24px);
+  @include sass-tools.toRem('font-size', 24px);
 }
 
 .demo-3 {
-  @include toRem('font-size', 32px);
+  @include sass-tools.toRem('font-size', 32px);
 }

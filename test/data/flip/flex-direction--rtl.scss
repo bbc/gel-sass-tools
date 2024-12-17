@@ -1,8 +1,7 @@
-$rtl: true;
-
-@import '../../../node_modules/sass-mq/mq';
-@import '../../../sass-tools';
+@use '../../../sass-tools' with (
+  $rtl: true
+);
 
 .demo {
-  flex-direction: flip(row-reverse, row);
+  flex-direction: sass-tools.flip(row-reverse, row);
 }
