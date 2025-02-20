@@ -1,3 +1,6 @@
+@use 'sass:list';
+@use 'sass:map';
+
 ///*------------------------------------*\
 //    # GEL GLOBALS
 //\*------------------------------------*/
@@ -90,10 +93,10 @@ $gel-breakpoint-static: gel-bp-l !default;
 // and append it to the $mq-breakpoints map.
 $gel-breakpoints: ();
 @each $breakpoint in $gel-breakpoint-sizes {
-    $i: index($gel-breakpoint-sizes, $breakpoint);
-    $breakpoint-name: #{$gel-breakpoint-prefix}#{nth($gel-breakpoint-names, $i)};
+    $i: list.index($gel-breakpoint-sizes, $breakpoint);
+    $breakpoint-name: #{$gel-breakpoint-prefix}#{list.nth($gel-breakpoint-names, $i)};
 
-    $gel-breakpoints: map-merge($gel-breakpoints, ($breakpoint-name: $breakpoint)) !global;
+    $gel-breakpoints: map.merge($gel-breakpoints, ($breakpoint-name: $breakpoint)) !global;
 }
 
 

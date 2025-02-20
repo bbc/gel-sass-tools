@@ -18,25 +18,25 @@
 // @author          Harry Roberts - http://bit.ly/1NTThPq
 //
 @function quarter($gel-number) {
-    @return round(math.div($gel-number, 4));
+    @return math.round(math.div($gel-number, 4));
 }
 
 @function third($gel-number) {
-    @return round(math.div($gel-number, 3));
+    @return math.round(math.div($gel-number, 3));
 }
 
 @function halve($gel-number) {
-    @return round(math.div($gel-number, 2));
+    @return math.round(math.div($gel-number, 2));
 }
 
 @function double($gel-number) {
-    @return round($gel-number * 2);
+    @return math.round($gel-number * 2);
 }
 
 @function triple($gel-number) {
-    @return round($gel-number * 3);
+    @return math.round($gel-number * 3);
 }
 
 @function quadruple($gel-number) {
-    @return round($gel-number * 4);
+    @return math.round($gel-number * 4);
 }
