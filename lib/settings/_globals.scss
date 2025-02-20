@@ -1,3 +1,4 @@
+@use 'sass:list';
 @use 'sass:map';
 
 ///*------------------------------------*\
@@ -93,7 +94,7 @@ $gel-breakpoint-static: gel-bp-l !default;
 $gel-breakpoints: ();
 @each $breakpoint in $gel-breakpoint-sizes {
     $i: index($gel-breakpoint-sizes, $breakpoint);
-    $breakpoint-name: #{$gel-breakpoint-prefix}#{nth($gel-breakpoint-names, $i)};
+    $breakpoint-name: #{$gel-breakpoint-prefix}#{list.nth($gel-breakpoint-names, $i)};
 
     $gel-breakpoints: map.merge($gel-breakpoints, ($breakpoint-name: $breakpoint)) !global;
 }
