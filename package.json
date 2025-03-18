@@ -6,7 +6,7 @@
   "scripts": {
     "prettier": "prettier --write '{src/**/*,test/**/*,*}.{mjs,json,scss}'",
     "pretest": "npm run prettier",
-    "test": "sass --style=expanded --no-source-map test/test.scss test/test.css && diff -u test/test-expected.css test/test.css"
+    "test": "jest"
   },
   "repository": {
     "type": "git",

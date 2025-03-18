@@ -1,0 +1,152 @@
+@import 'true';
+@import '../../_sass-tools';
+
+@include describe('Math functions') {
+  @include describe('with positive values') {
+    @include it('should return a quarter of the given value') {
+      @include assert {
+        @include output {
+          padding: quarter(10px);
+        }
+
+        @include expect {
+          padding: 3px;
+        }
+      }
+    }
+
+    @include it('should return a third of the given value') {
+      @include assert {
+        @include output {
+          padding: third(10px);
+        }
+
+        @include expect {
+          padding: 3px;
+        }
+      }
+    }
+
+    @include it('should return a halve of the given value') {
+      @include assert {
+        @include output {
+          padding: halve(10px);
+        }
+
+        @include expect {
+          padding: 5px;
+        }
+      }
+    }
+
+    @include it('should return two times the given value') {
+      @include assert {
+        @include output {
+          padding: double(10px);
+        }
+
+        @include expect {
+          padding: 20px;
+        }
+      }
+    }
+
+    @include it('should return three times the given value') {
+      @include assert {
+        @include output {
+          padding: triple(10px);
+        }
+
+        @include expect {
+          padding: 30px;
+        }
+      }
+    }
+
+    @include it('should return four times the given value') {
+      @include assert {
+        @include output {
+          padding: quadruple(10px);
+        }
+
+        @include expect {
+          padding: 40px;
+        }
+      }
+    }
+  }
+
+  @include describe('with negative values') {
+    @include it('should return a quarter of the given value') {
+      @include assert {
+        @include output {
+          padding: quarter(-10px);
+        }
+
+        @include expect {
+          padding: -3px;
+        }
+      }
+    }
+
+    @include it('should return a third of the given value') {
+      @include assert {
+        @include output {
+          padding: third(-10px);
+        }
+
+        @include expect {
+          padding: -3px;
+        }
+      }
+    }
+
+    @include it('should return a halve of the given value') {
+      @include assert {
+        @include output {
+          padding: halve(-10px);
+        }
+
+        @include expect {
+          padding: -5px;
+        }
+      }
+    }
+
+    @include it('should return two times the given value') {
+      @include assert {
+        @include output {
+          padding: double(-10px);
+        }
+
+        @include expect {
+          padding: -20px;
+        }
+      }
+    }
+
+    @include it('should return three times the given value') {
+      @include assert {
+        @include output {
+          padding: triple(-10px);
+        }
+
+        @include expect {
+          padding: -30px;
+        }
+      }
+    }
+
+    @include it('should return four times the given value') {
+      @include assert {
+        @include output {
+          padding: quadruple(-10px);
+        }
+
+        @include expect {
+          padding: -40px;
+        }
+      }
+    }
+  }
+}
