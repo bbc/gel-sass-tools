@@ -4,6 +4,7 @@
   "description": "A collection of Sass Settings & Tools which align to key GEL values",
   "main": "_sass-tools.scss",
   "scripts": {
+    "prettier": "prettier --write '{src/**/*,test/**/*,*}.{mjs,json,scss}'",
     "test": "sass --style=expanded --no-source-map test/test.scss test/test.css && diff -u test/test-expected.css test/test.css"
   },
   "repository": {
@@ -37,6 +38,7 @@
     "sass-mq": "6.0.0"
   },
   "devDependencies": {
+    "prettier": "3.5.3",
     "sass": "1.85.0",
     "sass-mq": "6.0.0"
   }
