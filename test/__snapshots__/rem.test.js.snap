@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rem() function should return pixel values converted to rem 1`] = `
+".demo-1 {
+  font-size: 1rem;
+}
+
+.demo-2 {
+  font-size: 1.5rem;
+}
+
+.demo-3 {
+  font-size: 2rem;
+}"
+`;
+
+exports[`rem() mixin should return pixel values, and rem values 1`] = `
+".demo-1 {
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+.demo-2 {
+  font-size: 24px;
+  font-size: 1.5rem;
+}
+
+.demo-3 {
+  font-size: 32px;
+  font-size: 2rem;
+}"
+`;
+
+exports[`rem() mixin should return rem only values, when pixel fallback is disabled 1`] = `
+".demo-1 {
+  font-size: 1rem;
+}
+
+.demo-2 {
+  font-size: 1.5rem;
+}
+
+.demo-3 {
+  font-size: 2rem;
+}"
+`;

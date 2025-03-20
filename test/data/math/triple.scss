@@ -1,0 +1,6 @@
+@import '../../../node_modules/sass-mq/mq';
+@import '../../../sass-tools';
+
+.demo {
+  padding: triple(10px);
+}

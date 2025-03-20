@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`math() with negative values should return a halve of the given value 1`] = `
+".demo {
+  padding: -5px;
+}"
+`;
+
+exports[`math() with negative values should return a quarter of the given value 1`] = `
+".demo {
+  padding: -3px;
+}"
+`;
+
+exports[`math() with negative values should return a third of the given value 1`] = `
+".demo {
+  padding: -3px;
+}"
+`;
+
+exports[`math() with negative values should return four times the given value 1`] = `
+".demo {
+  padding: -40px;
+}"
+`;
+
+exports[`math() with negative values should return three times the given value 1`] = `
+".demo {
+  padding: -30px;
+}"
+`;
+
+exports[`math() with negative values should return two times the given value 1`] = `
+".demo {
+  padding: -20px;
+}"
+`;
+
+exports[`math() with positive values should return a halve of the given value 1`] = `
+".demo {
+  padding: 5px;
+}"
+`;
+
+exports[`math() with positive values should return a quarter of the given value 1`] = `
+".demo {
+  padding: 3px;
+}"
+`;
+
+exports[`math() with positive values should return a third of the given value 1`] = `
+".demo {
+  padding: 3px;
+}"
+`;
+
+exports[`math() with positive values should return four times the given value 1`] = `
+".demo {
+  padding: 40px;
+}"
+`;
+
+exports[`math() with positive values should return three times the given value 1`] = `
+".demo {
+  padding: 30px;
+}"
+`;
+
+exports[`math() with positive values should return two times the given value 1`] = `
+".demo {
+  padding: 20px;
+}"
+`;
