@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`flip() in ltr mode is maintained when setting direction 1`] = `
+".demo {
+  direction: ltr;
+}"
+`;
+
+exports[`flip() in ltr mode is maintained when setting flex-direction 1`] = `
+".demo {
+  flex-direction: row-reverse;
+}"
+`;
+
+exports[`flip() in ltr mode is maintained when setting float 1`] = `
+".demo {
+  float: left;
+}"
+`;
+
+exports[`flip() in ltr mode is maintained when setting text alignment 1`] = `
+".demo {
+  text-align: left;
+}"
+`;
+
+exports[`flip() in rtl mode is applied when setting direction 1`] = `
+".demo {
+  direction: rtl;
+}"
+`;
+
+exports[`flip() in rtl mode is applied when setting flex-direction 1`] = `
+".demo {
+  flex-direction: row;
+}"
+`;
+
+exports[`flip() in rtl mode is applied when setting float 1`] = `
+".demo {
+  float: right;
+}"
+`;
+
+exports[`flip() in rtl mode is applied when setting text alignment 1`] = `
+".demo {
+  text-align: right;
+}"
+`;
