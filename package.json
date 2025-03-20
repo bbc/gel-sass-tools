@@ -4,10 +4,11 @@
   "description": "A collection of Sass Settings & Tools which align to key GEL values",
   "main": "_sass-tools.scss",
   "scripts": {
-    "prettier": "prettier --write '{src/**/*,test/**/*,*}.{mjs,json,scss}'",
+    "prettier": "prettier --write '{src/**/*,test/**/*,*}.{js,json,mjs,scss}'",
     "pretest": "npm run prettier",
     "test": "jest"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/bbc/gel-sass-tools.git"
@@ -35,13 +36,11 @@
     "url": "https://github.com/bbc/gel-sass-tools/issues"
   },
   "homepage": "https://github.com/bbc/gel-sass-tools",
-  "dependencies": {
-    "sass": "1.86.0",
-    "sass-mq": "6.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "jest": "29.7.0",
     "prettier": "3.5.3",
-    "sass-true": "8.1.0"
+    "sass": "1.86.0",
+    "sass-mq": "6.0.0"
   }
 }
