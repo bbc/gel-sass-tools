@@ -1,6 +1,5 @@
-@import '../../../node_modules/sass-mq/mq';
-@import '../../../sass-tools';
+@use '../../../sass-tools';
 
 .demo {
-  padding: quarter(-10px);
+  padding: sass-tools.quarter(-10px);
 }

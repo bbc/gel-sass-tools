@@ -1,6 +1,5 @@
-@import '../../../node_modules/sass-mq/mq';
-@import '../../../sass-tools';
+@use '../../../sass-tools';
 
 .demo {
-  flex-direction: flip(row-reverse, row);
+  flex-direction: sass-tools.flip(row-reverse, row);
 }
