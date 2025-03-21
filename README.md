@@ -4,7 +4,7 @@
     Forms part of the <a href="https://github.com/bbc/gel-foundations" target="_blank"><b>GEL Foundations</b></a>
 </p>
 
-## Breaking Change: v7.0.0
+## Breaking Change: v4.0.0
 
 ### @import, @use and @forward
 
