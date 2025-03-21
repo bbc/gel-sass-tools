@@ -35,20 +35,20 @@ $rtl: false !default;
 //
 // @type String
 //
-$margin-right:       'margin-right';
-$margin-left:        'margin-left';
-$border-right:       'border-right';
-$border-left:        'border-left';
-$border-left-width:  'border-left-width';
-$border-right-width: 'border-right-width';
-$border-left-color:  'border-left-color';
-$border-right-color: 'border-right-color';
-$border-left-style:  'border-left-style';
-$border-right-style: 'border-right-style';
-$padding-right:      'padding-right';
-$padding-left:       'padding-left';
-$right:              'right';
-$left:               'left';
+$margin-right:       'margin-right' !default;
+$margin-left:        'margin-left' !default;
+$border-right:       'border-right' !default;
+$border-left:        'border-left' !default;
+$border-left-width:  'border-left-width' !default;
+$border-right-width: 'border-right-width' !default;
+$border-left-color:  'border-left-color' !default;
+$border-right-color: 'border-right-color' !default;
+$border-left-style:  'border-left-style' !default;
+$border-right-style: 'border-right-style' !default;
+$padding-right:      'padding-right' !default;
+$padding-left:       'padding-left' !default;
+$right:              'right' !default;
+$left:               'left' !default;
 
 
 // If the `$rtl` variable is `true` flip the direction of the interpolated properties
