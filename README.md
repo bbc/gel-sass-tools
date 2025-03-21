@@ -4,11 +4,11 @@
     Forms part of the <a href="https://github.com/bbc/gel-foundations" target="_blank"><b>GEL Foundations</b></a>
 </p>
 
-## Breaking Change
+## Breaking Change: v7.0.0
 
 ### @import, @use and @forward
 
-The `@import` directive is now deprecated in favour of `@use` and `@forward`, see [documentation](https://sass-lang.com/documentation/at-rules/use/) for more information.
+The `@import` directive is now deprecated in favour of `@use` and `@forward`, see [SASS documentation](https://sass-lang.com/documentation/at-rules/use/) for more information.
 
 GEL Sass Tools has now been updated to `@use` and `@forward` to remove a large number of deprecation notices.
 
