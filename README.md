@@ -1,11 +1,61 @@
 <h1 align="center">GEL Sass Tools</h1>
 <p align="center">
-  <a href="https://travis-ci.org/bbc/gel-sass-tools" target="_blank"><img src="https://travis-ci.org/bbc/gel-sass-tools.svg?branch=master"></a>
-</p>
-<p align="center">
     A collection of Sass Settings & Tools which align to key GEL values.<br />
     Forms part of the <a href="https://github.com/bbc/gel-foundations" target="_blank"><b>GEL Foundations</b></a>
 </p>
+
+## Breaking Change
+
+### @import, @use and @forward
+
+The `@import` directive is now deprecated in favour of `@use` and `@forward`, see [documentation](https://sass-lang.com/documentation/at-rules/use/) for more information.
+
+GEL Sass Tools has now been updated to `@use` and `@forward` to remove a large number of deprecation notices.
+
+With the new @use directive, no var, function, or mixin is placed in global scope, and they are all scoped within the file.
+
+This means that users will explicitly need to include the partial file in each file that may use its vars, functions or mixins.
+
+As a result the RTL functionality will not work in the way it used to, because you can only bring in an external file once via `@use`.
+
+Previously you could have code like:
+```
+.ltr {
+    #{$margin-right}: 10px;
+    #{$margin-left}: 10px;
+}
+
+$rtl: true;
+@import '../sass-tools';
+
+.rtl {
+    #{$margin-right}: 10px;
+    #{$margin-left}: 10px;
+}
+```
+
+which compiled to:
+```
+.ltr {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.rtl {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+```
+
+You can no longer do this, the rtl paramater must be set at the point of loading:
+```
+@use '../sass-tools' with ($rtl: true);
+```
+
+### Prefixes
+
+Browsers have moved forward considerably since GEL Sass Tools was created and the browser vendor prefixes are no longer required and have therefore been removed.
+
 
 ## What is this?
 
@@ -47,13 +97,13 @@ $ npm install --save gel-sass-tools
 
 ```sass
 // your-app/main.scss
-@import 'node_modules/gel-sass-tools/sass-tools';
-@import 'node_modules/sass-mq/mq'
+@use 'node_modules/gel-sass-tools/sass-tools';
+@use 'node_modules/sass-mq/mq'
 ```
 
 ### Install manually
 
-You can install this component manually by downloading the content of this Git repo into your project and use a Sass @import to include it in your project.
+You can install this component manually by downloading the content of this Git repo into your project and use a Sass @use to include it in your project.
 
 > **Note:** you will manually need to manage the dependencies below, without these this component will fail to compile.
 
@@ -171,7 +221,7 @@ The following options can be defined before the tools partial is included to cus
 
 - `$gel-tools-rem-enable--function` - enable/disable the rem conversion, if this option is disabled only `px` values will be returned
 - `$gel-tools-rem-enable--mixin` - disable the mixin if you only want to output the `px`, this can be useful for IE8 stylesheets who don't need `rem` values
-- `$tel-tools-rem-enable--fallback` - disable the automatic generation of a `px` fallback when the mixin in called, use this open if you want to remove all `px` values from your stylesheets
+- `$gel-tools-rem-enable--fallback` - disable the automatic generation of a `px` fallback when the mixin in called, use this open if you want to remove all `px` values from your stylesheets
 
 ### Right-to-Left (RTL)
 
