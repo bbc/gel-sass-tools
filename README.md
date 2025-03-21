@@ -49,10 +49,41 @@ which compiled to:
 
 You can no longer do this, the rtl paramater must be set at the point of loading:
 ```
-@use '../sass-tools' with ($rtl: true);
+@use '../sass-tools';
+
+.ltr {
+    #{$margin-right}: 10px;
+    #{$margin-left}: 10px;
+}
+```
+compiles to
+
+```
+.ltr {
+  margin-right: 10px;
+  margin-left: 10px;
+}
 ```
 
-### Prefixes
+```
+@use '../sass-tools' with ($rtl: true);
+
+.rtl {
+    #{sass-tools.$margin-right}: 10px;
+    #{sass-tools.$margin-left}: 10px;
+}
+```
+compiles to
+
+```
+.rtl {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+```
+
+
+### Browser Prefixes
 
 Browsers have moved forward considerably since GEL Sass Tools was created and the browser vendor prefixes are no longer required and have therefore been removed.
 
