@@ -65,6 +65,7 @@ compiles to
 }
 ```
 
+Whereas:
 ```
 @use '../sass-tools' with ($rtl: true);
 
