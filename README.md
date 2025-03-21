@@ -52,8 +52,8 @@ You can no longer do this, the rtl paramater must be set at the point of loading
 @use '../sass-tools';
 
 .ltr {
-    #{$margin-right}: 10px;
-    #{$margin-left}: 10px;
+    #{sass-tools.$margin-right}: 10px;
+    #{sass-tools.$margin-left}: 10px;
 }
 ```
 compiles to
