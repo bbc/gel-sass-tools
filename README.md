@@ -16,9 +16,9 @@ With the new @use directive, no var, function, or mixin is placed in global scop
 
 This means that users will explicitly need to include the partial file in each file that may use its vars, functions or mixins.
 
-As a result the RTL functionality will not work in the way it used to, because you can only bring in an external file once via `@use`.
+As a result the right-to-left functionality will not work in the way it used to, because you can only bring in an external file once via `@use`.
 
-Previously you could have code like:
+Previously you could have:
 ```
 .ltr {
     #{$margin-right}: 10px;
