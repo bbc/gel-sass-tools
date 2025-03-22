@@ -110,9 +110,6 @@ $gel-breakpoints: ();
 
 // MQ expects a Sass Map containing the available breakpoints
 mq.$breakpoints: $gel-breakpoints;
-// In order to output the appropriate styles for older versions of IE which don't
-// support Media Queries we need to define which breakpoint we want styles output for
-$mq-static-breakpoint: #{$gel-breakpoint-static};
 
 
 
