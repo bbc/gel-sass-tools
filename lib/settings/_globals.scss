@@ -1,3 +1,4 @@
+@use '../../node_modules/sass-mq/mq' as mq;
 @use 'sass:list';
 @use 'sass:map';
 
@@ -90,7 +91,7 @@ $gel-breakpoint-static: gel-bp-l !default;
 
 
 // Loop through each of our breakpoint-sizes, map this with the appropriate name
-// and append it to the $mq-breakpoints map.
+// and append it to the $gel-breakpoints map.
 $gel-breakpoints: ();
 @each $breakpoint in $gel-breakpoint-sizes {
     $i: list.index($gel-breakpoint-sizes, $breakpoint);
@@ -108,11 +109,7 @@ $gel-breakpoints: ();
 // versions of IE
 
 // MQ expects a Sass Map containing the available breakpoints
-$mq-breakpoints: $gel-breakpoints;
-
-// In order to output the appropriate styles for older versions of IE which don't
-// support Media Queries we need to define which breakpoint we want styles output for
-$mq-static-breakpoint: #{$gel-breakpoint-static};
+mq.$breakpoints: $gel-breakpoints;
 
 
 
