@@ -36,11 +36,12 @@
     "url": "https://github.com/bbc/gel-sass-tools/issues"
   },
   "homepage": "https://github.com/bbc/gel-sass-tools",
-  "dependencies": {},
+  "dependencies": {
+    "sass-mq": "7.0.0-beta.1"
+  },
   "devDependencies": {
     "jest": "29.7.0",
     "prettier": "3.5.3",
-    "sass": "1.86.0",
-    "sass-mq": "7.0.0-beta.1"
+    "sass": "1.86.0"
   }
 }
