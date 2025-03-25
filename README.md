@@ -6,101 +6,30 @@
 
 ## Breaking Change: v4.0.0
 
-### @import, @use and @forward
+v4.0.0 of GEL Grid uses the [@use](https://sass-lang.com/documentation/at-rules/use/) and [@forward](https://sass-lang.com/documentation/at-rules/forward/) approach and removes [@import](https://sass-lang.com/documentation/at-rules/import/).
 
-The `@import` directive is now deprecated in favour of `@use` and `@forward`, see [SASS documentation](https://sass-lang.com/documentation/at-rules/use/) for more information.
+This has a number of consequences, but mostly the impact comes to how other modules are now loaded in and how you can access variables. Namespaces now come into play so please read the sass documention linked to above.
 
-GEL Sass Tools has now been updated to `@use` and `@forward` to remove a large number of deprecation notices.
+In addition there were a number of __browser prefixes__ used in versions prior to v4. Given how much the browser landscape has changed since they were added, it is __now time to remove them__.
 
-With the new @use directive, no var, function, or mixin is placed in global scope, and they are all scoped within the file.
-
-This means that users will explicitly need to include the partial file in each file that may use its vars, functions or mixins.
-
-As a result the right-to-left functionality will not work in the way it used to, because you can only bring in an external file once via `@use`.
-
-Previously you could have:
-```
-.ltr {
-    #{$margin-right}: 10px;
-    #{$margin-left}: 10px;
-}
-
-$rtl: true;
-@import '../sass-tools';
-
-.rtl {
-    #{$margin-right}: 10px;
-    #{$margin-left}: 10px;
-}
-```
-
-which compiled to:
-```
-.ltr {
-  margin-right: 10px;
-  margin-left: 10px;
-}
-
-.rtl {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-```
-
-You can no longer do this, the rtl paramater must be set at the point of loading:
-```
-@use '../sass-tools';
-
-.ltr {
-    #{sass-tools.$margin-right}: 10px;
-    #{sass-tools.$margin-left}: 10px;
-}
-```
-compiles to
-
-```
-.ltr {
-  margin-right: 10px;
-  margin-left: 10px;
-}
-```
-
-Whereas:
-```
-@use '../sass-tools' with ($rtl: true);
-
-.rtl {
-    #{sass-tools.$margin-right}: 10px;
-    #{sass-tools.$margin-left}: 10px;
-}
-```
-compiles to
-
-```
-.rtl {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-```
-
-
-### Browser Prefixes
-
-Browsers have moved forward considerably since GEL Sass Tools was created and the browser vendor prefixes are no longer required and have therefore been removed.
+For usage of GEL Sass Tools prior to v4.0.0 please reference the [v3.4.0 readme](https://github.com/bbc/gel-sass-tools/tree/3.4.0).
 
 
 ## What is this?
 
-GEL Sass Tools is a collection of Sass variables, functions and mixins which allows you to work with GEL units consistently within your Sass. It is also required by other [GEL Foundations](https://github.com/bbc/gel-foundations) components.
+GEL Sass Tools is a collection of Sass variables, functions and mixins which allows you to work with GEL units consistently within your Sass. It is also used by other [GEL Foundations](https://github.com/bbc/gel-foundations) components.
 
 Here is how you could use these tools in your Sass:
 
-```sass
-.my-component {
-    margin-top: $gel-spacing-unit;
+```scss
+@use 'gel-sass-tools/sass-tools';
+@use 'sass-mq/mq';
 
-    @include mq($from: gel-bp-m) {
-        margin-top: double($gel-spacing-unit);
+.my-component {
+    margin-top: sass-tools.$gel-spacing-unit;
+
+    @include mq.mq($from: gel-bp-m) {
+        margin-top: sass-tools.double(sass-tools.$gel-spacing-unit);
     }
 }
 ```
@@ -127,10 +56,10 @@ This would compile to:
 $ npm install --save gel-sass-tools
 ```
 
-```sass
+```scss
 // your-app/main.scss
-@use 'node_modules/gel-sass-tools/sass-tools';
-@use 'node_modules/sass-mq/mq'
+@use 'gel-sass-tools/sass-tools';
+
 ```
 
 ### Install manually
@@ -139,11 +68,22 @@ You can install this component manually by downloading the content of this Git r
 
 > **Note:** you will manually need to manage the dependencies below, without these this component will fail to compile.
 
-## Dependencies
 
-In order to use the component you will need the following components available:
+### IMPORTANT: Specify a Loadpath
 
-- [Sass MQ](https://github.com/sass-mq/sass-mq)
+Because this module depends on other modules such as [Sass MQ](https://github.com/sass-mq/sass-mq), when compiling your Sass it needs to know where find the referenced modules. It does this via a [loadPath](https://sass-lang.com/documentation/at-rules/use/#load-paths).
+
+If compiling from the command line you can specify:
+```
+sass --load-path=node_modules/ <options>
+```
+
+whereas within nodejs you can call compile ot compileAsync:
+```js
+await sass.compileAsync(file, { loadPaths: ['./node_modules'] })
+```
+
+This ensures the dependencies required by this module can be loaded correctly.
 
 ## Usage
 
@@ -169,19 +109,21 @@ The following breakpoints are defined and added to the [Sass MQ](https://github.
 
 These can be called when using the `mq` mixin:
 
-```sass
+```scss
+@use 'sass-mq/mq';
+
 .my-component {
     ...
 
-    @include mq($from: gel-bp-s) {
+    @include mq.mq($from: gel-bp-s) {
         ...
     }
 
-    @include mq($from: gel-bp-m) {
+    @include mq.mq($from: gel-bp-m) {
         ...
     }
 
-    @include mq($from: gel-bp-l) {
+    @include mq.mq($from: gel-bp-l) {
         ...
     }
 }
@@ -200,21 +142,25 @@ The following `math` functions are included:
 
 These functions can be used inline with any numerical CSS rule. E.g:
 
-```sass
+```scss
+@use 'gel-sass-tools/sass-tools';
+
 .my-component {
-    margin-bottom: halve($gel-spacing-unit);
-    padding-left: double($gel-spacing-unit);
-    padding-right: double($gel-spacing-unit);
+    margin-bottom: sass-tools.halve(sass-tools.$gel-spacing-unit);
+    padding-left: sass-tools.double(sass-tools.$gel-spacing-unit);
+    padding-right: sass-tools.double(sass-tools.$gel-spacing-unit);
 }
 ```
 
 or functions can be nested within other Sass features such as mixins:
 
-```sass
+```scss
+@use 'gel-sass-tools/sass-tools';
+
 .my-component {
-    @include toRem('margin-bottom', halve($gel-spacing-unit));
-    @include toRem('padding-left', double($gel-spacing-unit));
-    @include toRem('padding-right', double($gel-spacing-unit));
+    @include sass-tools.toRem('margin-bottom', sass-tools.halve(sass-tools.$gel-spacing-unit));
+    @include sass-tools.toRem('padding-left', sass-tools.double(sass-tools.$gel-spacing-unit));
+    @include sass-tools.toRem('padding-right', sass-tools.double(sass-tools.$gel-spacing-unit));
 }
 ```
 
@@ -222,9 +168,11 @@ or functions can be nested within other Sass features such as mixins:
 
 The `rem` tool can be used in two ways. Either by directly calling the `toRem($value)` function, which will convert the supplied value and return a `rem` unit. E.g:
 
-```sass
+```scss
+@use 'gel-sass-tools/sass-tools';
+
 .my-component {
-    margin-bottom: toRem($gel-spacing-unit);
+    margin-bottom: sass-tools.toRem(sass-tools.$gel-spacing-unit);
 }
 ```
 
@@ -233,9 +181,11 @@ The `rem` tool can be used in two ways. Either by directly calling the `toRem($v
 You can also use the `@include toRem($value);` mixin, which by default returns a `px` fallback to allow support for older browsers which don't support `rem` units. E.g:
 
 **Sass**
-```sass
+```scss
+@use 'gel-sass-tools/sass-tools';
+
 .my-component {
-    @include toRem('margin-bottom', 16px);
+    @include sass-tools.toRem('margin-bottom', 16px);
 }
 ```
 
@@ -281,7 +231,7 @@ Interpolation should be used for any property which has a direction (e.g. `paddi
 
 Taking the following CSS as an example:
 
-```sass
+```scss
 // Original Sass
 .my-component {
     float: left;
@@ -290,10 +240,17 @@ Taking the following CSS as an example:
 
 For a RTL layout, `float: left;` should be flipped to `float: right;`. We can use the `flip()` function to accomplish this.
 
-```sass
-// Flipped Sass
-.my-component {
-    float: flip(left, right);
+```scss
+@use 'gel-sass-tools/sass-tools';
+
+.ltr {
+    float: sass-tools.flip(left, right);
+}
+
+sass-tools.$rtl: true;
+
+.rtl {
+    float: sass-tools.flip(left, right);
 }
 ```
 
@@ -301,14 +258,12 @@ When Sass comes across the `flip()` function, it will check the value of the `$r
 
 The Sass will compile out as follows:
 
-```sass
-// Compiled LTR style
-.my-component {
+```css
+.ltr {
     float: left;
 }
 
-// Compiled RTL style
-.my-component {
+.rtl {
     float: right;
 }
 ```
@@ -319,10 +274,12 @@ Interpolation is used to adjust CSS properties which contain a direction within 
 
 Taking the following CSS as an example:
 
-```sass
+```scss
+@use 'gel-sass-tools/sass-tools';
+
 // Original Sass
 .my-component {
-    padding-left: $gel-spacing-unit; // 8px
+    padding-left: sass-tools.$gel-spacing-unit; // 8px
 }
 ```
 
@@ -330,23 +287,29 @@ For a RTL layout, `padding-left: 8px;` should be flipped to `padding-right: 8px;
 
 In order to flip this, we have to interpolate the style property:
 
-```sass
-// Flipped Sass
-.my-component {
-    #{$padding-left}: $gel-spacing-unit; // 8px
+```scss
+@use 'gel-sass-tools/sass-tools';
+
+.ltr {
+    #{sass-tools.$padding-left}: sass-tools.$gel-spacing-unit; // 8px
 }
+
+sass-tools.$rtl: true;
+
+.rtl {
+    #{sass-tools.$padding-left}: sass-tools.$gel-spacing-unit; // 8px
+}
+
 ```
 
 This will compile out to:
 
-```sass
-// Compiled LTR style
-.my-component {
+```css
+.ltr {
     padding-left: 8px;
 }
 
-// Compiled RTL style
-.my-component {
+.rtl {
     padding-right: 8px;
 }
 ```
