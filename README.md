@@ -6,9 +6,9 @@
 
 ## Breaking Change: v4.0.0
 
-v4.0.0 of GEL Grid uses the [@use](https://sass-lang.com/documentation/at-rules/use/) and [@forward](https://sass-lang.com/documentation/at-rules/forward/) approach and removes [@import](https://sass-lang.com/documentation/at-rules/import/).
+v4.0.0 of GEL Sass Tools implements the [@use](https://sass-lang.com/documentation/at-rules/use/) and [@forward](https://sass-lang.com/documentation/at-rules/forward/) approach and removes [@import](https://sass-lang.com/documentation/at-rules/import/).
 
-This has a number of consequences, but mostly the impact comes to how other modules are now loaded in and how you can access variables. Namespaces now come into play so please read the sass documention linked to above.
+This has a number of consequences; how modules are loaded, and how to access variables. Namespaces now come into play, so please read the sass documention links above to learn more.
 
 In addition there were a number of __browser prefixes__ used in versions prior to v4. Given how much the browser landscape has changed since they were added, it is __now time to remove them__.
 
