@@ -6,112 +6,28 @@
 
 ## Breaking Change: v4.0.0
 
-### @import, @use and @forward
+v4.0.0 of GEL Grid uses the [@use](https://sass-lang.com/documentation/at-rules/use/) and [@forward](https://sass-lang.com/documentation/at-rules/forward/) approach and removes [@import](https://sass-lang.com/documentation/at-rules/import/).
 
-The `@import` directive is now deprecated in favour of `@use` and `@forward`, see [SASS documentation](https://sass-lang.com/documentation/at-rules/use/) for more information.
+This has a number of consequences, but mostly the imact comes to how other modules are now loaded in and how you can access variables, using the namespace of the module. Please see the sass documention linked to abive.
 
-GEL Sass Tools has now been updated to `@use` and `@forward` to remove a large number of deprecation notices.
+In addition there were previously a number of *browser prefixes* that were output. Given how much the browser landscape has changed since they were added, it is now *time to remove them*.
 
-With the new @use directive, no var, function, or mixin is placed in global scope, and they are all scoped within the file.
-
-This means that users will explicitly need to include the partial file in each file that may use its vars, functions or mixins.
-
-
-Previously you could have:
-```scss
-.ltr {
-    #{$margin-right}: 10px;
-    #{$margin-left}: 10px;
-}
-
-$rtl: true;
-@import '../sass-tools';
-
-.rtl {
-    #{$margin-right}: 10px;
-    #{$margin-left}: 10px;
-}
-```
-
-which compiled to:
-```css
-.ltr {
-  margin-right: 10px;
-  margin-left: 10px;
-}
-
-.rtl {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-```
-
-You can no longer import the file twice, so additional import/use calls should be avoided - and you should use the namespace for all vars/functions and mixins:
-```scss
-@use 'gel-sass-tools/sass-tools';
-
-.ltr {
-    #{sass-tools.$margin-right}: 10px;
-    #{sass-tools.$margin-left}: 10px;
-}
-
-sass-tools.$rtl: true;
-
-.rtl {
-    #{sass-tools.$margin-right}: 10px;
-    #{sass-tools.$margin-left}: 10px;
-}
-```
-compiles to
-
-```css
-.ltr {
-  margin-right: 10px;
-  margin-left: 10px;
-}
-
-.rtl {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-```
-
-If you want to set the parameter at the point of loading you can use `with`:
-```scss
-@use 'gel-sass-tools/sass-tools';
-
-.rtl {
-    #{sass-tools.$margin-right}: 10px;
-    #{sass-tools.$margin-left}: 10px;
-}
-```
-
-compiles to
-```css
-.rtl {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-```
-
-### Browser Prefixes
-
-Browsers have moved forward considerably since GEL Sass Tools was created and the browser vendor prefixes are no longer required and have therefore been removed.
 
 
 ## What is this?
 
-GEL Sass Tools is a collection of Sass variables, functions and mixins which allows you to work with GEL units consistently within your Sass. It is also required by other [GEL Foundations](https://github.com/bbc/gel-foundations) components.
+GEL Sass Tools is a collection of Sass variables, functions and mixins which allows you to work with GEL units consistently within your Sass. It is also used by other [GEL Foundations](https://github.com/bbc/gel-foundations) components.
 
 Here is how you could use these tools in your Sass:
 
 ```scss
 @use 'gel-sass-tools/sass-tools';
+@use 'sass-mq/mq';
 
 .my-component {
     margin-top: sass-tools.$gel-spacing-unit;
 
-    @include mq($from: gel-bp-m) {
+    @include mq.mq($from: gel-bp-m) {
         margin-top: sass-tools.double(sass-tools.$gel-spacing-unit);
     }
 }
@@ -151,6 +67,22 @@ You can install this component manually by downloading the content of this Git r
 
 > **Note:** you will manually need to manage the dependencies below, without these this component will fail to compile.
 
+
+### IMPORTANT: Specify a Loadpath
+
+Because this module depends on other modules such as [Sass MQ](https://github.com/sass-mq/sass-mq), when compiling your Sass it needs to know where find the referenced modules. It does this via a [loadPath](https://sass-lang.com/documentation/at-rules/use/#load-paths).
+
+If compiling from the command line you can specify:
+```
+sass --load-path=node_modules/ <options>
+```
+
+whereas within nodejs you can call compile ot compileAsync:
+```js
+await sass.compileAsync(file, { loadPaths: ['./node_modules'] })
+```
+
+This ensures the dependencies required by this module can be loaded correctly.
 
 ## Usage
 
@@ -245,7 +177,7 @@ The `rem` tool can be used in two ways. Either by directly calling the `toRem($v
 
 You can also use the `@include toRem($value);` mixin, which by default returns a `px` fallback to allow support for older browsers which don't support `rem` units. E.g:
 
-**Sass**
+**Scss**
 ```scss
 @use 'gel-sass-tools/sass-tools';
 
@@ -297,7 +229,7 @@ Interpolation should be used for any property which has a direction (e.g. `paddi
 Taking the following CSS as an example:
 
 ```scss
-// Original Sass
+// Original Scss
 .my-component {
     float: left;
 }
@@ -308,7 +240,7 @@ For a RTL layout, `float: left;` should be flipped to `float: right;`. We can us
 ```scss
 @use 'gel-sass-tools/sass-tools';
 
-// Flipped Sass
+// Flipped Scss
 .my-component {
     float: sass-tools.flip(left, right);
 }
@@ -339,7 +271,7 @@ Taking the following CSS as an example:
 ```scss
 @use 'gel-sass-tools/sass-tools';
 
-// Original Sass
+// Original Scss
 .my-component {
     padding-left: sass-tools.$gel-spacing-unit; // 8px
 }
@@ -352,7 +284,7 @@ In order to flip this, we have to interpolate the style property:
 ```scss
 @use 'gel-sass-tools/sass-tools';
 
-// Flipped Sass
+// Flipped Scss
 .my-component {
     #{sass-tools.$padding-left}: sass-tools.$gel-spacing-unit; // 8px
 }
