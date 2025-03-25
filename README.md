@@ -76,6 +76,23 @@ compiles to
 }
 ```
 
+If you want to set the parameter at the point of loading you can use `with`:
+```scss
+@use 'gel-sass-tools/sass-tools';
+
+.rtl {
+    #{sass-tools.$margin-right}: 10px;
+    #{sass-tools.$margin-left}: 10px;
+}
+```
+
+compiles to
+```css
+.rtl {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+```
 
 ### Browser Prefixes
 
