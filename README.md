@@ -8,9 +8,9 @@
 
 v4.0.0 of GEL Grid uses the [@use](https://sass-lang.com/documentation/at-rules/use/) and [@forward](https://sass-lang.com/documentation/at-rules/forward/) approach and removes [@import](https://sass-lang.com/documentation/at-rules/import/).
 
-This has a number of consequences, but mostly the imact comes to how other modules are now loaded in and how you can access variables, using the namespace of the module. Please see the sass documention linked to abive.
+This has a number of consequences, but mostly the impact comes to how other modules are now loaded in and how you can access variables. Namespaces now come into play so please read the sass documention linked to above.
 
-In addition there were previously a number of *browser prefixes* that were output. Given how much the browser landscape has changed since they were added, it is now *time to remove them*.
+In addition there were a number of __browser prefixes__ used in versions prior to v4. Given how much the browser landscape has changed since they were added, it is __now time to remove them__.
 
 
 
@@ -177,7 +177,7 @@ The `rem` tool can be used in two ways. Either by directly calling the `toRem($v
 
 You can also use the `@include toRem($value);` mixin, which by default returns a `px` fallback to allow support for older browsers which don't support `rem` units. E.g:
 
-**Scss**
+**Sass**
 ```scss
 @use 'gel-sass-tools/sass-tools';
 
@@ -229,7 +229,7 @@ Interpolation should be used for any property which has a direction (e.g. `paddi
 Taking the following CSS as an example:
 
 ```scss
-// Original Scss
+// Original Sass
 .my-component {
     float: left;
 }
@@ -240,8 +240,14 @@ For a RTL layout, `float: left;` should be flipped to `float: right;`. We can us
 ```scss
 @use 'gel-sass-tools/sass-tools';
 
-// Flipped Scss
-.my-component {
+// Flipped Sass
+.ltr {
+    float: sass-tools.flip(left, right);
+}
+
+sass-tools.$rtl: true;
+
+.rtl {
     float: sass-tools.flip(left, right);
 }
 ```
@@ -250,14 +256,12 @@ When Sass comes across the `flip()` function, it will check the value of the `$r
 
 The Sass will compile out as follows:
 
-```scss
-// Compiled LTR style
-.my-component {
+```css
+.ltr {
     float: left;
 }
 
-// Compiled RTL style
-.my-component {
+.rtl {
     float: right;
 }
 ```
@@ -271,7 +275,7 @@ Taking the following CSS as an example:
 ```scss
 @use 'gel-sass-tools/sass-tools';
 
-// Original Scss
+// Original Sass
 .my-component {
     padding-left: sass-tools.$gel-spacing-unit; // 8px
 }
@@ -284,22 +288,26 @@ In order to flip this, we have to interpolate the style property:
 ```scss
 @use 'gel-sass-tools/sass-tools';
 
-// Flipped Scss
-.my-component {
+.ltr {
     #{sass-tools.$padding-left}: sass-tools.$gel-spacing-unit; // 8px
 }
+
+sass-tools.$rtl: true;
+
+.rtl {
+    #{sass-tools.$padding-left}: sass-tools.$gel-spacing-unit; // 8px
+}
+
 ```
 
 This will compile out to:
 
-```scss
-// Compiled LTR style
-.my-component {
+```css
+.ltr {
     padding-left: 8px;
 }
 
-// Compiled RTL style
-.my-component {
+.rtl {
     padding-right: 8px;
 }
 ```
