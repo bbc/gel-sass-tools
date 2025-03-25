@@ -110,8 +110,3 @@ $gel-breakpoints: ();
 
 // MQ expects a Sass Map containing the available breakpoints
 mq.$breakpoints: $gel-breakpoints;
-
-
-
-// Define a variable so we can tell the other components the settings are available
-$gel-settings-available: true;
