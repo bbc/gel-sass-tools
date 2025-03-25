@@ -12,6 +12,7 @@ This has a number of consequences, but mostly the impact comes to how other modu
 
 In addition there were a number of __browser prefixes__ used in versions prior to v4. Given how much the browser landscape has changed since they were added, it is __now time to remove them__.
 
+For usage of GEL Sass Tools prior to v4.0.0 please reference the [v3.4.0 readme](https://github.com/bbc/gel-sass-tools/tree/3.4.0).
 
 
 ## What is this?
@@ -154,6 +155,8 @@ These functions can be used inline with any numerical CSS rule. E.g:
 or functions can be nested within other Sass features such as mixins:
 
 ```scss
+@use 'gel-sass-tools/sass-tools';
+
 .my-component {
     @include sass-tools.toRem('margin-bottom', sass-tools.halve(sass-tools.$gel-spacing-unit));
     @include sass-tools.toRem('padding-left', sass-tools.double(sass-tools.$gel-spacing-unit));
@@ -240,7 +243,6 @@ For a RTL layout, `float: left;` should be flipped to `float: right;`. We can us
 ```scss
 @use 'gel-sass-tools/sass-tools';
 
-// Flipped Sass
 .ltr {
     float: sass-tools.flip(left, right);
 }
