@@ -9,5 +9,5 @@ phases:
   build:
     on-failure: ABORT
     commands:
-      - echo "Testing"
+      - echo "Run tests"
       - npm test
