@@ -20,9 +20,9 @@
 // @return {String}    The correct value based on the value of $rtl
 //
 @function flip($ltr-value, $rtl-value) {
-    @if rtl.$rtl {
-        @return $rtl-value;
-    }
+  @if rtl.$rtl {
+    @return $rtl-value;
+  }
 
-    @return $ltr-value;
+  @return $ltr-value;
 }

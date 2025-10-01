@@ -4,9 +4,10 @@
   "description": "A collection of Sass Settings & Tools which align to key GEL values",
   "main": "_sass-tools.scss",
   "scripts": {
-    "prettier": "prettier --write '{src/**/*,test/**/*,*}.{js,json,mjs,scss}'",
-    "pretest": "npm run prettier",
-    "test": "jest"
+    "build": "echo \"Error: no build step required\" && exit 1",
+    "jest": "jest",
+    "prettier": "prettier . '!**/*.md' --write",
+    "test": "npm run prettier && npm run jest"
   },
   "type": "module",
   "repository": {

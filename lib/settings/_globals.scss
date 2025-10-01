@@ -11,7 +11,6 @@
 // adjusted directly; you should predefine the variables in your own project,
 // to overide these default settings.
 
-
 /// Namespace
 //
 // By default all GEL components are namespaced with `gel-`, this allows us to
@@ -21,8 +20,6 @@
 // @type String
 //
 $gel-namespace: 'gel-' !default;
-
-
 
 /// Spacing
 //
@@ -41,8 +38,6 @@ $gel-spacing-unit: 8px !default;
 //
 $gel-alt-spacing-unit: 12px !default;
 
-
-
 /// Base settings
 //
 // Base settings are used primarly by our tools at the moment but there use could change in
@@ -54,8 +49,6 @@ $gel-alt-spacing-unit: 12px !default;
 // @type Number (with units)
 //
 $gel-base-font-size: 16px !default;
-
-
 
 /// Breakpoints
 //
@@ -83,19 +76,20 @@ $gel-breakpoint-names: (xs, s, m, l, xl, xxl) !default;
 //
 $gel-breakpoint-sizes: (240px, 400px, 600px, 900px, 1008px, 1280px) !default;
 
-
-
 // Loop through each of our breakpoint-sizes, map this with the appropriate name
 // and append it to the $gel-breakpoints map.
 $gel-breakpoints: ();
 @each $breakpoint in $gel-breakpoint-sizes {
-    $i: list.index($gel-breakpoint-sizes, $breakpoint);
-    $breakpoint-name: #{$gel-breakpoint-prefix}#{list.nth($gel-breakpoint-names, $i)};
+  $i: list.index($gel-breakpoint-sizes, $breakpoint);
+  $breakpoint-name: #{$gel-breakpoint-prefix}#{list.nth($gel-breakpoint-names, $i)};
 
-    $gel-breakpoints: map.merge($gel-breakpoints, ($breakpoint-name: $breakpoint)) !global;
+  $gel-breakpoints: map.merge(
+    $gel-breakpoints,
+    (
+      $breakpoint-name: $breakpoint,
+    )
+  ) !global;
 }
-
-
 
 /// MQ Config
 //
