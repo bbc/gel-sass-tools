@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`rtl() switches to rtl when the $rtl variable is set to \`true\` 1`] = `
+exports[`rtl() > switches to rtl when the $rtl variable is set to \`true\` 1`] = `
 ".rtl {
   margin-left: 10px;
   margin-right: 10px;
@@ -17,7 +17,7 @@ exports[`rtl() switches to rtl when the $rtl variable is set to \`true\` 1`] = `
 }"
 `;
 
-exports[`rtl() uses ltr when the $rtl variable is not set 1`] = `
+exports[`rtl() > uses ltr when the $rtl variable is not set 1`] = `
 ".ltr {
   margin-right: 10px;
   margin-left: 10px;

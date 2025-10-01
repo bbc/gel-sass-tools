@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`rem() function should return pixel values converted to rem 1`] = `
+exports[`rem() > function > should return pixel values converted to rem 1`] = `
 ".demo-1 {
   font-size: 1rem;
 }
@@ -14,7 +14,7 @@ exports[`rem() function should return pixel values converted to rem 1`] = `
 }"
 `;
 
-exports[`rem() mixin should return pixel values, and rem values 1`] = `
+exports[`rem() > mixin > should return pixel values, and rem values 1`] = `
 ".demo-1 {
   font-size: 16px;
   font-size: 1rem;
@@ -31,7 +31,7 @@ exports[`rem() mixin should return pixel values, and rem values 1`] = `
 }"
 `;
 
-exports[`rem() mixin should return rem only values, when pixel fallback is disabled 1`] = `
+exports[`rem() > mixin > should return rem only values, when pixel fallback is disabled 1`] = `
 ".demo-1 {
   font-size: 1rem;
 }
