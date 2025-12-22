@@ -5,6 +5,12 @@ describe('rem()', () => {
 
       expect(css).toMatchSnapshot();
     });
+
+    it('should return multiple values', async () => {
+      const css = await global.compileCSS('test/data/rem/multiples.scss');
+
+      expect(css).toMatchSnapshot();
+    });
   });
 
   describe('mixin', () => {

@@ -1,0 +1,6 @@
+@use '../../../sass-tools';
+
+.multiples {
+  // Passing a list to toRem triggers the buggy code path
+  padding: sass-tools.toRem(16px 24px);
+}

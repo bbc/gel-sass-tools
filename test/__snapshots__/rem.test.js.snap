@@ -1,5 +1,11 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`rem() > function > should return multiple values 1`] = `
+".multiples {
+  padding: 1rem 1.5rem;
+}"
+`;
+
 exports[`rem() > function > should return pixel values converted to rem 1`] = `
 ".demo-1 {
   font-size: 1rem;
