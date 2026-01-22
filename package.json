@@ -43,7 +43,7 @@
   "devDependencies": {
     "jsdom": "27.4.0",
     "prettier": "3.7.4",
-    "sass": "1.97.1",
-    "vitest": "4.0.16"
+    "sass": "1.97.2",
+    "vitest": "4.0.17"
   }
 }
