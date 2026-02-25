@@ -41,9 +41,8 @@ $gel-tools-rem-enable--fallback: true !default;
   }
 
   @return if(
-    meta.type-of($value) == number and math.unit($value) == px,
-    math.div($value, $baseline) * 1rem,
-    $value
+    sass(meta.type-of($value) == number and math.unit($value) == px): math.div($value, $baseline) *
+      1rem; else: $value
   );
 }
 
