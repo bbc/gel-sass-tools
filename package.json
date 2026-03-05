@@ -37,6 +37,9 @@
     "url": "https://github.com/bbc/gel-sass-tools/issues"
   },
   "homepage": "https://github.com/bbc/gel-sass-tools",
+  "overrides": {
+    "immutable": "5.1.5"
+  },
   "dependencies": {
     "sass-mq": "7.0.0"
   },
