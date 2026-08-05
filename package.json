@@ -1,6 +1,6 @@
 {
   "name": "gel-sass-tools",
-  "version": "4.1.10",
+  "version": "4.1.11",
   "description": "A collection of Sass Settings & Tools which align to key GEL values",
   "main": "_sass-tools.scss",
   "scripts": {
@@ -42,9 +42,12 @@
     "sass-mq": "7.0.1"
   },
   "devDependencies": {
-    "jsdom": "29.1.1",
+    "jsdom": "30.0.1",
     "prettier": "3.9.6",
-    "sass": "1.101.6",
+    "sass": "1.102.0",
     "vitest": "4.1.10"
+  },
+  "overrides": {
+    "postcss": "8.5.24"
   }
 }
