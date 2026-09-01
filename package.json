@@ -1,6 +1,6 @@
 {
   "name": "gel-sass-tools",
-  "version": "4.1.11",
+  "version": "4.1.12",
   "description": "A collection of Sass Settings & Tools which align to key GEL values",
   "main": "_sass-tools.scss",
   "scripts": {
@@ -38,14 +38,14 @@
   },
   "homepage": "https://github.com/bbc/gel-sass-tools",
   "dependencies": {
-    "picomatch": "4.0.5",
+    "picomatch": "4.0.7",
     "sass-mq": "7.0.1"
   },
   "devDependencies": {
     "jsdom": "30.0.1",
     "prettier": "3.9.6",
-    "sass": "1.102.0",
-    "vitest": "4.1.10"
+    "sass": "1.103.1",
+    "vitest": "4.1.11"
   },
   "overrides": {
     "postcss": "8.5.24"
