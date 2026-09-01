@@ -38,14 +38,14 @@
   },
   "homepage": "https://github.com/bbc/gel-sass-tools",
   "dependencies": {
-    "picomatch": "4.0.5",
+    "picomatch": "4.0.7",
     "sass-mq": "7.0.1"
   },
   "devDependencies": {
     "jsdom": "30.0.1",
     "prettier": "3.9.6",
-    "sass": "1.102.0",
-    "vitest": "4.1.10"
+    "sass": "1.103.1",
+    "vitest": "4.1.11"
   },
   "overrides": {
     "postcss": "8.5.24"
