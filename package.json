@@ -46,8 +46,5 @@
     "prettier": "3.9.8",
     "sass": "1.104.1",
     "vitest": "4.1.11"
-  },
-  "overrides": {
-    "postcss": "8.5.24"
   }
 }
